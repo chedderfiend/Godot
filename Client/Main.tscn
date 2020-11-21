@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 369.76
+margin_top = 14.2182
+margin_right = 629.76
+margin_bottom = 79.2182
+text = "Hail and well met!
+Enter your name and press join
+
+When the other players join, press ready"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinButton" type="Button" parent="."]
+margin_left = 582.0
+margin_top = 103.0
+margin_right = 617.0
+margin_bottom = 123.0
+size_flags_horizontal = 4
+text = "Join"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Status" type="Label" parent="."]
+margin_left = 368.0
+margin_top = 139.0
+margin_right = 628.0
+margin_bottom = 153.0
+
+[node name="NameLabel" type="Label" parent="."]
+margin_left = 367.0
+margin_top = 106.0
+margin_right = 413.0
+margin_bottom = 120.0
+text = "Name: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 423.0
+margin_top = 101.0
+margin_right = 573.0
+margin_bottom = 125.0
+text = "Player"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = 367.0
+margin_top = 95.0
+margin_right = 628.0
+margin_bottom = 206.0
+
+[node name="Players" type="RichTextLabel" parent="Panel"]
+margin_left = -5.0
+margin_top = -52.0
+margin_right = 258.0
+margin_bottom = 59.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReadyButton" type="Button" parent="Panel"]
+margin_left = 2.0
+margin_top = 78.0
+margin_right = 259.0
+margin_bottom = 109.0
+text = "Ready"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="JoinButton" to="." method="_on_JoinButton_pressed"]
+[connection signal="pressed" from="Panel/ReadyButton" to="." method="_on_ReadyButton_pressed"]
